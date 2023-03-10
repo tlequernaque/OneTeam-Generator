@@ -93,13 +93,13 @@ function writeToFile(fileName, data) {
     return fs.writeFileSync(fileName, data);
 }
 
-const init = (questions) => {
-    inquirer.prompt(questions) .then((response) => {
+const init = (addEmployee) => {
+    inquirer.prompt(addEmployee) .then((response) => {
         console.log(response);
-        const mdPageContent = generateMarkdown(response);
-        console.log(mdPageContent);
-        writeToFile ('./dist/team.html', mdPageContent)
+        const htmlPageContent = generateHtml(response);
+        console.log(htmlPageContent);
+        writeToFile ('./dist/team.html', htmlPageContent)
     })
 };
 
-init(questions);
+init(addEmployee);
