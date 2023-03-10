@@ -41,7 +41,53 @@ const addEngineer = [
 
 ]
 
+const addIntern = [
+    {
+        type: 'input',
+        name: 'internName',
+        message: 'What is the name of the enginner?',
+    }, 
+    {
+        type: 'input',
+        name: 'internId',
+        message: 'What is the employee ID number of your engineer?',
+    },
+    {
+        type: 'input',
+        name: 'internEmail',
+        message: 'What is the email address of your engineer?',
+    },
+    {
+        type: 'input',
+        name: 'internSchool',
+        message: 'What school does the intern attend?',
+    }
 
+]
+
+const addManager = [
+    {
+        type: 'input',
+        name: 'managerName',
+        message: 'What is the name of the enginner?',
+    }, 
+    {
+        type: 'input',
+        name: 'managerId',
+        message: 'What is the employee ID number of your engineer?',
+    },
+    {
+        type: 'input',
+        name: 'managerEmail',
+        message: 'What is the email address of your engineer?',
+    },
+    {
+        type: 'input',
+        name: 'managerOffice',
+        message: 'What is the office number of the manager?',
+    }
+
+]
 
 function writeToFile(fileName, data) {
     return fs.writeFileSync(fileName, data);
