@@ -6,8 +6,9 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const newHtml = require('./src/page-template')
+const team = []
 
-const addEmployee = [
+const employeeOption = [
     {
         type: 'list',
         name: 'type',
@@ -17,7 +18,7 @@ const addEmployee = [
     }
 ];
 
-const addEngineer = [
+const addEngineerQuestions = [
     {
         type: 'input',
         name: 'engineerName',
@@ -41,21 +42,21 @@ const addEngineer = [
 
 ]
 
-const addIntern = [
+const addInternQuestions = [
     {
         type: 'input',
         name: 'internName',
-        message: 'What is the name of the enginner?',
+        message: 'What is the name of the intern?',
     }, 
     {
         type: 'input',
         name: 'internId',
-        message: 'What is the employee ID number of your engineer?',
+        message: 'What is the employee ID number of your intern?',
     },
     {
         type: 'input',
         name: 'internEmail',
-        message: 'What is the email address of your engineer?',
+        message: 'What is the email address of your intern?',
     },
     {
         type: 'input',
@@ -65,21 +66,21 @@ const addIntern = [
 
 ]
 
-const addManager = [
+const addManagerQuestions = [
     {
         type: 'input',
         name: 'managerName',
-        message: 'What is the name of the enginner?',
+        message: 'What is the name of the manager?',
     }, 
     {
         type: 'input',
         name: 'managerId',
-        message: 'What is the employee ID number of your engineer?',
+        message: 'What is the employee ID number of your manager?',
     },
     {
         type: 'input',
         name: 'managerEmail',
-        message: 'What is the email address of your engineer?',
+        message: 'What is the email address of your manager?',
     },
     {
         type: 'input',
@@ -102,4 +103,45 @@ const init = (addEmployee) => {
     })
 };
 
-init(addEmployee);
+
+const addEngineer = () => {
+    inquirer.prompt(addEngineerQuestions) .then((response) => {
+        const engineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGithub)
+        team.push(engineer)
+        addEmployee()
+    })
+};
+
+
+const addIntern = () => {
+    inquirer.prompt(addInternQuestions) .then((response) => {
+        const intern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool)
+        team.push(intern)
+        addEmployee()
+    })
+};
+
+
+const addManager = () => {
+    inquirer.prompt(addManagerQuestions) .then((response) => {
+        const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOffice)
+        team.push(manager)
+        addEmployee()
+    })
+};
+
+
+const addEmployee = () => {
+    inquirer.prompt(employeeOption) .then((response) => {
+        if (response.type === "Engineer"){
+            addEngineer()
+        }else if (response.type === "Intern"){
+            addIntern()
+        }else{
+            console.log(team)
+            writeToFile("team.html", newHtml(team))
+        }
+    })    
+}
+
+addManager()
