@@ -139,7 +139,7 @@ const addEmployee = () => {
             addIntern()
         }else{
             console.log(team)
-            writeToFile("team.html", newHtml(team))
+            writeToFile("./dist/team.html", newHtml(team))
         }
     })    
 }

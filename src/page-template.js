@@ -8,7 +8,7 @@ const generateTeam = team => {
             </div>
             <ul class="list-group list-group-flush mb-3">
                 <li class="list-group-item">ID: ${manager.getId()}</li>
-                <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}"></a></li>
+                <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></span></li>
                     <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
             </ul>
         </div>
@@ -19,12 +19,12 @@ const generateTeam = team => {
         <div class="card m-4 text-light bg-dark" style="width: 18rem;">
                     <div class="card-body">
                         <h2 >${engineer.getName()}</h2>
-                        <h3><i class="fas fa-mug-hot"></i> Manager</h3>
+                        <h3><i class="fas fa-mug-hot"></i> Engineer</h3>
                     </div>
                     <ul class="list-group list-group-flush mb-3">
                         <li class="list-group-item">ID: ${engineer.getId()}</li>
-                        <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}"></a></li>
-                        <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}"></a></li>
+                        <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}"></a></li>${engineer.getGithub()}"
+                        <li class="list-group-item">GitHub: <a target="_blank" href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
                     </ul>
         </div>
         `
@@ -34,11 +34,11 @@ const generateTeam = team => {
         <div class="card m-4 text-light bg-dark" style="width: 18rem;">
                     <div class="card-body">
                         <h2 >${intern.getName()}</h2>
-                        <h3><i class="fas fa-mug-hot"></i> Manager</h3>
+                        <h3><i class="fas fa-mug-hot"></i> Intern</h3>
                     </div>
                     <ul class="list-group list-group-flush mb-3">
                         <li class="list-group-item">ID: ${intern.getId()}</li>
-                        <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}"></a></li>
+                        <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></span></li>
                         <li class="list-group-item">School: ${intern.getSchool()}</li>
                     </ul>
         </div>
