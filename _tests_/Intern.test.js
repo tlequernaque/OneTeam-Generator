@@ -1,4 +1,5 @@
-const Intern = require('../lib/Intern')
+const Intern = require('../lib/Intern');
+const Employee = require('../lib/Employee');
 
 test("testing for name property", function(){
     const testValue = "john";
