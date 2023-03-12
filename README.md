@@ -32,7 +32,7 @@ Following these steps, you should be able to run the app smoothly and successful
 N/A
 
 ## Demo
-![](./assets/OneTeam-Generator.mp4)
+https://user-images.githubusercontent.com/38874213/224536878-b1ea8313-eb74-4bec-a26c-57c7189dfd5f.mp4
 
 ## Technologies
 JavaScript, Node.js, Inquirer, Jest, HTML, CSS
