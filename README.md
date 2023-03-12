@@ -32,9 +32,7 @@ Following these steps, you should be able to run the app smoothly and successful
 N/A
 
 ## Demo
-<a href="https://vimeo.com/806066026">Link to Full Demo</a>
-
-![FullDemoGif](./Develop/assets/images/FullDemo.gif)
+![](./assets/OneTeam-Generator.mp4)
 
 ## Technologies
 JavaScript, Node.js, Inquirer, Jest, HTML, CSS
